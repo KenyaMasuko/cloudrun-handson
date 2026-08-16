@@ -14,6 +14,7 @@ spec:
         # TODO: change for your own vpc name
         run.googleapis.com/network-interfaces: '[{"network":"cnsrun-app", "subnetwork":"cnsrun-the-cloud-run-book"}]'
         run.googleapis.com/vpc-access-egress: all-traffic
+        run.googleapis.com/cloudsql-instances: "the-cloud-run-book:asia-east1:cnsrun-app-instance"
     spec:
       containerConcurrency: 10
       timeoutSeconds: 300
