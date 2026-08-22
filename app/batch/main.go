@@ -52,7 +52,7 @@ func dbConnect() *sql.DB {
 func verifyNotification(db *sql.DB) error {
 	_, err := db.Exec(""+
 		"UPDATE notification n "+
-		"set verification = $1 "+
+		"set verification = $1, \"updatedAt\" = CURRENT_TIMESTAMP "+
 		"FROM users u WHERE n.email = u.email "+
 		"AND verification = $2",
 		true, false)
